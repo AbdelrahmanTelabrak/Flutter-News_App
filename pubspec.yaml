@@ -38,6 +38,22 @@ dependencies:
   http: ^1.2.0
   flutter_svg: ^2.0.9
   intl: ^0.19.0
+  url_launcher: ^6.2.5
+  # Networking
+  retrofit: ^3.0.1
+  dio: ^4.0.6
+  # BLoC
+  flutter_bloc: ^8.1.5
+  # Equatable
+  equatable: ^2.0.5
+  # Hooks
+  flutter_hooks:
+  # Cached images
+  cached_network_image:
+  #Service locator
+  get_it: ^7.6.7
+  # Local Database
+  floor: ^1.4.2
 
 
 dev_dependencies:
@@ -50,6 +66,10 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.9
+  floor_generator: ^1.4.2
+  retrofit_generator: ^4.2.0
+  analyzer: ^5.13.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
