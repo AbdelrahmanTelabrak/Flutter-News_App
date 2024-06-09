@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:news_app/view/feed/feed_tab.dart';
+import 'package:news_app/features/news/presentation/screens/feed_tab.dart';
 
 class FeedActivity extends StatelessWidget {
   FeedActivity({super.key});

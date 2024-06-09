@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'package:news_app/common/widgets/texts.dart';
-import 'package:news_app/model/articles.dart';
+import 'package:news_app/features/news/domain/entities/article_entity.dart';
+import 'package:news_app/ui/widgets/texts.dart';
+import '../../../../data_layer/model/articles.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class FeedItem extends StatelessWidget {
-  final Articles article;
+  final ArticleEntity article;
   final int index;
   const FeedItem({super.key, required this.article, required this.index});
 
@@ -36,8 +38,8 @@ class FeedItem extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: (article.urlToImage != null)
-                        ? Image.network(
-                            article.urlToImage!,
+                        ? CachedNetworkImage(
+                            imageUrl: article.urlToImage!,
                             fit: BoxFit.cover,
                           )
                         : Padding(
@@ -53,7 +55,7 @@ class FeedItem extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      mediumText(article.source!.name!,
+                      mediumText(article.source??article.author!,
                           color: Colors.grey, fontSize: 12),
                       const SizedBox(height: 4),
                       Expanded(
