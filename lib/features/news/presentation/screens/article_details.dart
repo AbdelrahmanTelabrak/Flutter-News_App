@@ -7,8 +7,6 @@ import 'package:news_app/ui/widgets/texts.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../data_layer/model/articles.dart';
-
 class ArticleDetailsActivity extends StatefulWidget {
   final ArticleEntity article;
   final String category;

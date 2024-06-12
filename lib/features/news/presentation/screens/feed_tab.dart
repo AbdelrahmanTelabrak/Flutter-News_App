@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/features/news/presentation/bloc/articles/remote/remote_article_cubit.dart';
 import 'package:news_app/features/news/presentation/screens/article_details.dart';
 import 'package:news_app/features/news/presentation/widgets/feed_item.dart';
-import 'package:news_app/viewmodel/feed/news_viewmodel.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../data_layer/model/news.dart';
 
 class FeedPage extends StatefulWidget {
   final String category;

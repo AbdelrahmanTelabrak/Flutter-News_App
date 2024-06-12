@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/features/news/domain/entities/article_entity.dart';
 import 'package:news_app/ui/widgets/texts.dart';
-import '../../../../data_layer/model/articles.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class FeedItem extends StatelessWidget {
