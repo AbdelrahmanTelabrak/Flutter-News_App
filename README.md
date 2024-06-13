@@ -1,16 +1,39 @@
-# news_app
+# Flutter News App
 
-A new Flutter project.
+Welcome to the Flutter News App! This project is built using clean architecture and BLoC state management. It fetches news articles from various categories such as tech, science, sports, and business. Additionally, it supports saving articles locally using the Floor database and opening articles in an external browser.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Category-Based News**: Fetches articles from categories like Tech, Science, Sports, and Business.
+- **Local Storage**: Save interesting articles for later reading using the Floor database.
+- **External Browser Access**: Open articles in an external browser directly from the app.
+- **Dependency Injection**: Implemented using Get_it for seamless management.
 
-A few resources to get you started if this is your first Flutter project:
+## Packages Used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **UI Enhancements**:
+  - `flutter_svg: ^2.0.9`
+  - `intl: ^0.19.0`
+- **Networking**:
+  - `retrofit: ^3.0.1`
+  - `dio: ^4.0.6`
+- **State Management**:
+  - `flutter_bloc: ^8.1.5`
+  - `equatable: ^2.0.5`
+- **Utilities**:
+  - `flutter_hooks`
+  - `cached_network_image`
+- **Service Locator**:
+  - `get_it: ^7.6.7`
+- **Local Database**:
+  - `floor: ^1.4.2`
+  - `sqflite: ^2.2.8`
+- **Link Handling**:
+  - `url_launcher: ^6.2.5`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/flutter_news_app.git
+
