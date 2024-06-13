@@ -9,7 +9,7 @@ class GetArticleUseCase implements UseCase<DataState<List<ArticleEntity>>, Strin
   final ArticleRepository _articleRepository;
   GetArticleUseCase(this._articleRepository);
   @override
-  Future<DataState<List<ArticleEntity>>> call(String params) {
+  Future<DataState<List<ArticleEntity>>> call({String params = 'general'}) {
     return _articleRepository.getNewsArticles(category: params);
   }
 }
