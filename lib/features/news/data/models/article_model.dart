@@ -1,10 +1,10 @@
 import 'package:floor/floor.dart';
 import 'package:news_app/features/news/domain/entities/article_entity.dart';
 
-@Entity(tableName: 'article', primaryKeys: ['id'])
+@Entity(tableName: 'articles', primaryKeys: ['id'])
 class ArticleModel extends ArticleEntity {
   ArticleModel({
-    String? id,
+    int? id,
     String? source,
     String? author,
     String? title,
@@ -27,7 +27,6 @@ class ArticleModel extends ArticleEntity {
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) {
     return ArticleModel(
-      id: json['source']['id'] ?? '',
       source: json['source']['name'] ?? '',
       author: json['author'] ?? '',
       title: json['title'] ?? '',

@@ -1,5 +1,5 @@
 class ArticleEntity {
-  String? id;
+  int? id;
   String? source;
   String? author;
   String? title;

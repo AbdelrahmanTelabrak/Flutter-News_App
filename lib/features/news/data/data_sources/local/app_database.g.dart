@@ -85,7 +85,7 @@ class _$AppDatabase extends AppDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `article` (`id` TEXT, `source` TEXT, `author` TEXT, `title` TEXT, `description` TEXT, `url` TEXT, `urlToImage` TEXT, `publishedAt` TEXT, `content` TEXT, PRIMARY KEY (`id`))');
+            'CREATE TABLE IF NOT EXISTS `articles` (`id` INTEGER, `source` TEXT, `author` TEXT, `title` TEXT, `description` TEXT, `url` TEXT, `urlToImage` TEXT, `publishedAt` TEXT, `content` TEXT, PRIMARY KEY (`id`))');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -106,7 +106,7 @@ class _$ArticleDao extends ArticleDao {
   )   : _queryAdapter = QueryAdapter(database),
         _articleModelInsertionAdapter = InsertionAdapter(
             database,
-            'article',
+            'articles',
             (ArticleModel item) => <String, Object?>{
                   'id': item.id,
                   'source': item.source,
@@ -120,7 +120,7 @@ class _$ArticleDao extends ArticleDao {
                 }),
         _articleModelDeletionAdapter = DeletionAdapter(
             database,
-            'article',
+            'articles',
             ['id'],
             (ArticleModel item) => <String, Object?>{
                   'id': item.id,
@@ -146,9 +146,9 @@ class _$ArticleDao extends ArticleDao {
 
   @override
   Future<List<ArticleModel>> getAllArticles() async {
-    return _queryAdapter.queryList('SELECT * FROM ArticleEntity',
+    return _queryAdapter.queryList('SELECT * FROM articles',
         mapper: (Map<String, Object?> row) => ArticleModel(
-            id: row['id'] as String?,
+            id: row['id'] as int?,
             source: row['source'] as String?,
             author: row['author'] as String?,
             title: row['title'] as String?,
