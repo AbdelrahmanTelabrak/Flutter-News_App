@@ -7,6 +7,7 @@ import 'package:news_app/injection_container.dart';
 import 'package:news_app/features/news/presentation/screens/feed_activity.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();
   runApp(const MyApp());
 }

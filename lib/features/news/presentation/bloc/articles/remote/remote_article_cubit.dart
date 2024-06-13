@@ -16,7 +16,7 @@ class RemoteArticleCubit extends Cubit<RemoteArticleState> {
 
   Future<void> getNews({required String category}) async {
     emit(const RemoteArticleLoading());
-    final dataState = await _usecase.call(category);
+    final dataState = await _usecase.call(params: category);
     if (dataState is DataSuccess) {
       print(dataState.data!.toString());
       emit(RemoteArticleDone(dataState.data!));
