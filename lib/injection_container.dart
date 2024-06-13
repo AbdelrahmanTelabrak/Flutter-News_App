@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:news_app/features/news/data/data_sources/remote/news_api_service.dart';
 import 'package:news_app/features/news/domain/repository/article_repository.dart';
+import 'package:news_app/features/news/presentation/bloc/articles/local/local_article_bloc.dart';
 
 import 'features/news/data/data_sources/local/app_database.dart';
 import 'features/news/data/repository/article_repository.dart';
@@ -51,5 +52,9 @@ Future<void> initializeDependencies() async {
   // Bloc
   sl.registerFactory<RemoteArticleCubit>(
     () => RemoteArticleCubit(sl<GetArticleUseCase>()),
+  );
+
+  sl.registerFactory<LocalArticleBloc>(
+        () => LocalArticleBloc(sl(), sl(), sl()),
   );
 }
