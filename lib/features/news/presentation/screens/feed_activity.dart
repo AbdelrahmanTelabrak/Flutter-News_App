@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:news_app/features/news/presentation/screens/feed_tab.dart';
+import 'package:news_app/features/news/presentation/screens/saved_articles.dart';
 
 class FeedActivity extends StatelessWidget {
   FeedActivity({super.key});
@@ -14,7 +15,7 @@ class FeedActivity extends StatelessWidget {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: const Color(0xff121212),
-        appBar: _appBar(),
+        appBar: _appBar(context),
         drawer: Drawer(
           width: MediaQuery.of(context).size.width/1.5,
           backgroundColor: const Color(0xff1E1E1E),
@@ -31,7 +32,7 @@ class FeedActivity extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(){
+  AppBar _appBar(BuildContext context){
     return AppBar(
       toolbarHeight: 60,
       backgroundColor: const Color(0xff1E1E1E),
@@ -56,11 +57,15 @@ class FeedActivity extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
           child: SvgPicture.asset('assets/icons/search.svg'),
         ),
-        Container(
-          width: 28,
-          height: 28,
-          margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-          child: SvgPicture.asset('assets/icons/notification.svg'),
+        IconButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const SavedArticlesPage(),));
+          },
+          padding: EdgeInsets.zero,
+          icon: const Icon(
+            Icons.bookmark_border_rounded,
+            color: Colors.white,
+          ),
         ),
         Container(
           width: 28,

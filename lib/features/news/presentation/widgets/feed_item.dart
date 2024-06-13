@@ -80,14 +80,6 @@ class FeedItem extends StatelessWidget {
                         onPressed: () {},
                         padding: EdgeInsets.zero,
                         icon: const Icon(
-                          Icons.bookmark_border_rounded,
-                          color: Colors.grey,
-                          size: 18,
-                        )),
-                    IconButton(
-                        onPressed: () {},
-                        padding: EdgeInsets.zero,
-                        icon: const Icon(
                           Icons.more_vert_rounded,
                           color: Colors.grey,
                           size: 18,
